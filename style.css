@@ -1,0 +1,139 @@
+body{
+margin:0;
+font-family: "Times New Roman", serif;
+background:linear-gradient(140deg,#fffaf7,#f2eef5,#eef6f2);
+height:100vh;
+overflow:hidden;
+}
+
+/* pages */
+.page{
+position:absolute;
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.page.active{
+display:flex;
+}
+
+/* first page text */
+
+.centerBox{
+color:#9b6a74;
+}
+
+h1{font-size:42px;margin:0;}
+h2{font-style:italic;margin-top:10px;}
+
+button{
+margin-top:35px;
+padding:16px 60px;
+font-size:20px;
+border-radius:50px;
+border:none;
+background:#fff4ee;
+color:#9b6a74;
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.06);
+}
+
+/* slider */
+
+.gallery{
+width:100%;
+overflow:hidden;
+margin-top:30px;
+}
+
+.track{
+display:flex;
+gap:70px;
+width:max-content;
+animation:scroll 50s linear infinite;
+}
+
+@keyframes scroll{
+from{transform:translateX(0);}
+to{transform:translateX(-50%);}
+}
+
+.card{
+width:260px;
+height:360px;
+background:#dff3df; /* pistachio border */
+padding:14px;
+border-radius:24px;
+box-shadow:0 14px 28px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:18px;
+}
+
+.caption{
+margin-top:10px;
+color:#8a5a6b;
+font-size:18px;
+direction:rtl;
+}
+
+/* fading arabic line */
+
+.arabicText{
+margin-top:35px;
+font-size:24px;
+color:#9b6a74;
+animation:fade 6s infinite;
+direction:rtl;
+}
+
+@keyframes fade{
+0%{opacity:0}
+50%{opacity:1}
+100%{opacity:0}
+}
+
+/* REALISTIC PETALS */
+
+.petals span{
+position:absolute;
+top:-50px;
+width:24px;
+height:30px;
+border-radius:70% 70% 60% 0;
+opacity:0.9;
+filter:blur(0.2px);
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-60px) translateX(0px) rotate(0deg);
+}
+25%{
+transform:translateY(25vh) translateX(80px) rotate(80deg);
+}
+50%{
+transform:translateY(55vh) translateX(-60px) rotate(160deg);
+}
+75%{
+transform:translateY(80vh) translateX(120px) rotate(250deg);
+}
+100%{
+transform:translateY(110vh) translateX(-80px) rotate(360deg);
+}
+}
